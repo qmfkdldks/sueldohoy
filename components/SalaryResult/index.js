@@ -7,7 +7,7 @@ const SalaryResult = (props) => {
     return (
         <React.Fragment>
             <Box>
-
+                <Paragraph>{currentValue}</Paragraph>
             </Box>
         </React.Fragment>
     )

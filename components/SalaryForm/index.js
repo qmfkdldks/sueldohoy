@@ -4,6 +4,7 @@ import {
 } from 'grommet';
 import { Gremlin, Currency } from 'grommet-icons';
 import fetch from 'isomorphic-unfetch'
+import SalaryResult from '../SalaryResult'
 
 function dateToYMD(date) {
     var d = date.getDate();
@@ -16,7 +17,8 @@ class SalaryForm extends React.Component {
     state = {
         date: new Date().toDateString(),
         value: '',
-        usd: {}
+        usd: {},
+        idle: true
     }
 
     componentDidMount() {
@@ -39,6 +41,7 @@ class SalaryForm extends React.Component {
         console.log("Date: ", dateToYMD(date_obj))
         console.log("Usd: ", usd)
 
+        this.setState({ idle: false })
         console.log("found", usd[dateToYMD(date_obj)])
     }
 
@@ -47,7 +50,15 @@ class SalaryForm extends React.Component {
     onValueChange = event => this.setState({ value: event.target.value })
 
     render() {
-        const { value } = this.state
+        const { value, idle } = this.state
+        const renderResult = (idle) ? (
+            <Box pad="medium">
+                <Heading>
+                    La inflación en 2018 fue del 47,6%, la cifra más alta en los últimos 27 años.
+                </Heading>
+                <WorldMap />
+            </Box>
+        ) : (<SalaryResult currentValue={1050} />)
         return (
             <React.Fragment>
                 <Box direction="row-responsive" pad='large'>
@@ -79,12 +90,7 @@ class SalaryForm extends React.Component {
                     </Box>
 
                     <Box width="100%" round={true} background='brand'>
-                        <Box pad="medium">
-                            <Heading>
-                                La inflación en 2018 fue del 47,6%, la cifra más alta en los últimos 27 años.
-                            </Heading>
-                            <WorldMap />
-                        </Box>
+                        {renderResult}
                     </Box>
 
                 </Box>
