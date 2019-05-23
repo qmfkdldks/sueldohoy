@@ -14,12 +14,12 @@ end
 
 def query_bcra(*)
   token = # Get access token from https://estadisticasbcra.com/api/registracion
-  %i[usd usd_of cer uva uvi].each do |type|
-    response = HTTParty.get(
-      "https://api.estadisticasbcra.com/#{type}",
-      headers: { 'Authorization' => "Bearer #{token}" }
-    )
-    save_json(type, response)
-  end
+    %i[usd usd_of cer uva uvi].each do |type|
+      response = HTTParty.get(
+        "https://api.estadisticasbcra.com/#{type}",
+        headers: { 'Authorization' => "Bearer #{token}" }
+      )
+      save_json(type, response)
+    end
   { statusCode: 200 }
 end
