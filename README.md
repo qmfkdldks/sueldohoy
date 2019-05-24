@@ -1,5 +1,7 @@
 # SueldoHoy
 
+![Screenshot_2019-05-24 Screenshot](https://user-images.githubusercontent.com/19354273/58359201-a7443e00-7e58-11e9-905a-2425acf21fff.png)
+
 ### Context
 
 > Due to the high inflation in Argentina
