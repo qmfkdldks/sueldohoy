@@ -13,8 +13,26 @@ app
   .then(() => {
     const server = express()
 
-    server.get('/data', async (req, res) => {
+    server.get('/usd', async (req, res) => {
       const response = await fetch('https://s3-us-west-2.amazonaws.com/sueldohoy/usd')
+      const json = await response.json()
+      res.json(json)
+    })
+
+    server.get('/cer', async (req, res) => {
+      const response = await fetch('https://s3-us-west-2.amazonaws.com/sueldohoy/cer')
+      const json = await response.json()
+      res.json(json)
+    })
+
+    server.get('/uva', async (req, res) => {
+      const response = await fetch('https://s3-us-west-2.amazonaws.com/sueldohoy/uva')
+      const json = await response.json()
+      res.json(json)
+    })
+
+    server.get('/uvi', async (req, res) => {
+      const response = await fetch('https://s3-us-west-2.amazonaws.com/sueldohoy/uvi')
       const json = await response.json()
       res.json(json)
     })
