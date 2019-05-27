@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, ResponsiveContext, Text } from "grommet"
+import { Box, ResponsiveContext, Text, Image } from "grommet"
 import { Grommet } from 'grommet-icons'
 // import { Logo, SocialMedia } from "../index";
 // import { FooterContent } from "./FooterContent";
@@ -19,9 +19,14 @@ const Footer = () => (
                         direction="row-responsive"
                         align="center"
                     >
-                        <Grommet color="brand" />
+                        <Box height="40px" width="40px">
+                            <Image
+                                fit="cover"
+                                src="/static/logo2.png"
+                            />
+                        </Box>
                         <Text weight="bold" size="large">
-                            Sueldo Hoy!
+                            SueldoHoy!
                         </Text>
                     </Box>
                 </Box>

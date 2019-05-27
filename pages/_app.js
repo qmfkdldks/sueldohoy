@@ -20,7 +20,7 @@ class MyApp extends App {
         return (
             <Container>
                 <Head>
-                    <title>Sueldo hoy Argentina</title>
+                    <title>SueldoHoy</title>
                     <meta name="description" content="Conozca el sueldo que debería cobrar en Argentina" />
                 </Head>
                 <Component {...pageProps} />

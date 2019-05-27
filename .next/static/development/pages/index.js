@@ -130,12 +130,16 @@ var Footer = function Footer() {
       gap: "small",
       direction: "row-responsive",
       align: "center"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(grommet_icons__WEBPACK_IMPORTED_MODULE_2__["Grommet"], {
-      color: "brand"
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_1__["Text"], {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+      height: "40px",
+      width: "40px"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_1__["Image"], {
+      fit: "cover",
+      src: "/static/logo2.png"
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_1__["Text"], {
       weight: "bold",
       size: "large"
-    }, "Sueldo Hoy!"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    }, "SueldoHoy!"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_1__["Box"], {
       align: "end"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_1__["Text"], null, " all rights reserved \xA9 2019 ")));
   });
@@ -60188,7 +60192,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!**************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fliar%2FDocuments%2Fsueldohoy%2Fpages%2Findex.js ***!
   \**************************************************************************************************************************/
@@ -60211,5 +60215,5 @@ module.exports = dll_829b10deddf10e1653a8;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

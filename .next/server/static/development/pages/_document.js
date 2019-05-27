@@ -2280,6 +2280,33 @@ function (_Document) {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_9__["Html"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_9__["Head"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
         href: "https://fonts.googleapis.com/css?family=Varela+Round&display=swap",
         rel: "stylesheet"
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/static/apple-touch-icon.png"
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/static/favicon-32x32.png"
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/static/favicon-16x16.png"
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
+        rel: "manifest",
+        href: "/static/site.webmanifest"
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
+        rel: "mask-icon",
+        href: "/static/safari-pinned-tab.svg",
+        color: "#5bbad5"
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("meta", {
+        name: "msapplication-TileColor",
+        content: "#da532c"
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("meta", {
+        name: "theme-color",
+        content: "#ffffff"
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("script", {
         async: true,
         src: "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"

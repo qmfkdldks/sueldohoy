@@ -949,7 +949,7 @@ function (_App) {
       var _this$props = this.props,
           Component = _this$props.Component,
           pageProps = _this$props.pageProps;
-      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_7__["Container"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_8___default.a, null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("title", null, "Sueldo hoy Argentina"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("meta", {
+      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_7__["Container"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_8___default.a, null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("title", null, "SueldoHoy"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("meta", {
         name: "description",
         content: "Conozca el sueldo que deber\xEDa cobrar en Argentina"
       })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Component, pageProps));
