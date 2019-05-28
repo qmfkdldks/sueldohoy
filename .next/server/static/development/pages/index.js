@@ -231,7 +231,8 @@ var Footer = function Footer() {
       width: "40px"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_1__["Image"], {
       fit: "cover",
-      src: "/static/logo2.png"
+      src: "/static/logo2.png",
+      alt: "SueldoHoy Logo"
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_1__["Text"], {
       weight: "bold",
       size: "large"
@@ -510,17 +511,20 @@ function (_React$Component) {
         direction: "row",
         gap: "small",
         align: "center"
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet_icons__WEBPACK_IMPORTED_MODULE_12__["Currency"], null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_11__["FormField"], {
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet_icons__WEBPACK_IMPORTED_MODULE_12__["Currency"], null), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_11__["FormField"], {
+        label: "\xBFCu\xE1nto cobraste?",
         min: 1,
         required: true,
         type: "number",
         placeholder: "$ Sueldo anterior",
         value: value,
         onChange: this.onValueChange
-      })), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_DateMaskedInput__WEBPACK_IMPORTED_MODULE_15__["default"], {
+      }))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_11__["FormField"], {
+        label: "\xBFC\xFAando cobraste?"
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_DateMaskedInput__WEBPACK_IMPORTED_MODULE_15__["default"], {
         value: this.state.date,
         onChange: this.onChangeDate
-      })), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_11__["Box"], {
+      })))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_11__["Box"], {
         align: "end"
       }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet__WEBPACK_IMPORTED_MODULE_11__["Button"], {
         type: "submit",

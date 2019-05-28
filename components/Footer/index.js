@@ -23,6 +23,7 @@ const Footer = () => (
                             <Image
                                 fit="cover"
                                 src="/static/logo2.png"
+                                alt="SueldoHoy Logo"
                             />
                         </Box>
                         <Text weight="bold" size="large">

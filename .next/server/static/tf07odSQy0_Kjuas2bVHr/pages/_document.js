@@ -370,7 +370,9 @@ function (_Document) {
   Object(createClass["a" /* default */])(MyDocument, [{
     key: "render",
     value: function render() {
-      return external_react_default.a.createElement(next_document["Html"], null, external_react_default.a.createElement(next_document["Head"], null, external_react_default.a.createElement("link", {
+      return external_react_default.a.createElement(next_document["Html"], {
+        lang: "en"
+      }, external_react_default.a.createElement(next_document["Head"], null, external_react_default.a.createElement("link", {
         href: "https://fonts.googleapis.com/css?family=Varela+Round&display=swap",
         rel: "stylesheet"
       }), external_react_default.a.createElement("link", {

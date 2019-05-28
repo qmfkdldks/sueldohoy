@@ -2277,7 +2277,9 @@ function (_Document) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(MyDocument, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_9__["Html"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_9__["Head"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_9__["Html"], {
+        lang: "en"
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_9__["Head"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
         href: "https://fonts.googleapis.com/css?family=Varela+Round&display=swap",
         rel: "stylesheet"
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {

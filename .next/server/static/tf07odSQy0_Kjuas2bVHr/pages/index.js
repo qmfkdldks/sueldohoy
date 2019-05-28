@@ -733,17 +733,20 @@ function (_React$Component) {
         direction: "row",
         gap: "small",
         align: "center"
-      }, external_react_default.a.createElement(external_grommet_icons_["Currency"], null), external_react_default.a.createElement(external_grommet_["FormField"], {
+      }, external_react_default.a.createElement(external_grommet_icons_["Currency"], null), external_react_default.a.createElement("label", null, external_react_default.a.createElement(external_grommet_["FormField"], {
+        label: "\xBFCu\xE1nto cobraste?",
         min: 1,
         required: true,
         type: "number",
         placeholder: "$ Sueldo anterior",
         value: value,
         onChange: this.onValueChange
-      })), external_react_default.a.createElement(components_DateMaskedInput, {
+      }))), external_react_default.a.createElement("label", null, external_react_default.a.createElement(external_grommet_["FormField"], {
+        label: "\xBFC\xFAando cobraste?"
+      }, external_react_default.a.createElement(components_DateMaskedInput, {
         value: this.state.date,
         onChange: this.onChangeDate
-      })), external_react_default.a.createElement(external_grommet_["Box"], {
+      })))), external_react_default.a.createElement(external_grommet_["Box"], {
         align: "end"
       }, external_react_default.a.createElement(external_grommet_["Button"], {
         type: "submit",
@@ -791,7 +794,8 @@ var Footer_Footer = function Footer() {
       width: "40px"
     }, external_react_default.a.createElement(external_grommet_["Image"], {
       fit: "cover",
-      src: "/static/logo2.png"
+      src: "/static/logo2.png",
+      alt: "SueldoHoy Logo"
     })), external_react_default.a.createElement(external_grommet_["Text"], {
       weight: "bold",
       size: "large"

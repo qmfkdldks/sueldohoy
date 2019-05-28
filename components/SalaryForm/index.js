@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    Box, Button, Form, FormField, Heading, Paragraph, Icons, WorldMap
+    Box, Button, Form, FormField, Heading, Paragraph, Text, Icons, WorldMap
 } from 'grommet'
 import { Gremlin, Currency, Home } from 'grommet-icons'
 import fetch from 'isomorphic-unfetch'
@@ -105,16 +105,23 @@ class SalaryForm extends React.Component {
                             <Box gap="small" pad="medium">
                                 <Box direction="row" gap="small" align="center">
                                     <Currency />
-                                    <FormField
-                                        min={1}
-                                        required={true}
-                                        type="number"
-                                        placeholder="$ Sueldo anterior"
-                                        value={value}
-                                        onChange={this.onValueChange}
-                                    />
+                                    <label>
+                                        <FormField
+                                            label="¿Cuánto cobraste?"
+                                            min={1}
+                                            required={true}
+                                            type="number"
+                                            placeholder="$ Sueldo anterior"
+                                            value={value}
+                                            onChange={this.onValueChange}
+                                        />
+                                    </label>
                                 </Box>
-                                <DateMaskedInput value={this.state.date} onChange={this.onChangeDate} />
+                                <label>
+                                    <FormField label="¿Cúando cobraste?">
+                                        <DateMaskedInput value={this.state.date} onChange={this.onChangeDate} />
+                                    </FormField>
+                                </label>
                                 {/* s<Calendar size="medium" alignSelf="center" date={this.state.date} /> */}
                             </Box>
                             <Box align="end">
