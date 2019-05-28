@@ -100,8 +100,8 @@ class SalaryForm extends React.Component {
 
                     <Box pad="medium" gap="small" >
                         <Form onSubmit={this.onCalculate}>
-                            <Heading>Ponéte el sueldo que cobraba</Heading>
-                            <Paragraph>Por el tema de inflación, nos necesitams una calculadora para el valor real</Paragraph>
+                            <Heading>¿Cuánto cobraba cuando tuvo su ultimo aumento?</Heading>
+                            <Paragraph>La inflación hace dificil saber cual es el porcentaje justo de actualizacion salarial que debe perseguir el empleado.</Paragraph>
                             <Box gap="small" pad="medium">
                                 <Box direction="row" gap="small" align="center">
                                     <Currency />
