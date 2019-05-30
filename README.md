@@ -1,6 +1,6 @@
 # SueldoHoy
 
-![Screenshot_2019-05-24 Screenshot](https://user-images.githubusercontent.com/19354273/58359201-a7443e00-7e58-11e9-905a-2425acf21fff.png)
+![smartmockups_jwas76bb](https://user-images.githubusercontent.com/19354273/58641657-fe6f6600-82d1-11e9-9330-80fd34621095.png)
 
 ### Context
 
