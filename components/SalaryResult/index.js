@@ -1,7 +1,6 @@
 import React from 'react'
-import { Box, DataTable, Meter, Heading, Paragraph, Text } from 'grommet'
-import { Fade, Bounce, Zoom, Rotate, Roll } from 'react-reveal'
-import { StatusPlaceholder } from 'grommet-icons'
+import { Box, Heading } from 'grommet'
+import { Fade } from 'react-reveal'
 
 const Row = (props) => {
     const { icon, index, could, need } = props
@@ -21,16 +20,7 @@ class SalaryResult extends React.Component {
 
         return (
             <React.Fragment>
-
-
-                <Box width="100%" direction="row" gap="small" justify="evenly">
-                    <Heading level="3">Índice</Heading>
-                    <Heading level="3">Podías</Heading>
-                    <Heading level="3">Necesitas</Heading>
-                </Box>
                 {rows}
-
-
             </React.Fragment >
         )
     }

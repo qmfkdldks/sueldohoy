@@ -1,17 +1,10 @@
 import React from 'react'
-import {
-    Box, Button, Form, FormField, Heading, Paragraph, Text, Icons, WorldMap
-} from 'grommet'
+import { Box, Button, Form, FormField, Heading, Paragraph, WorldMap } from 'grommet'
 import { Gremlin, Currency, Home } from 'grommet-icons'
 import fetch from 'isomorphic-unfetch'
 import SalaryResult from '../SalaryResult'
 import DateMaskedInput from '../DateMaskedInput'
-
-const mock = [
-    { index: "index", icon: <Currency />, could: "1059", need: "29031" },
-    { index: "index", icon: <Currency />, could: "1059", need: "29031" },
-    { index: "index", icon: <Currency />, could: "1059", need: "29031" },
-]
+import PriceJson from './tprice.json'
 
 function getD(index, data, date, value, icon = <Currency />) {
     const past_obj = data.find((record) => (record.d == date))
@@ -23,6 +16,30 @@ function getD(index, data, date, value, icon = <Currency />) {
         const current_ratio = data[data.length - 1].v
         const current_necessary = (past_available * current_ratio)
         const object = { index: index, icon: icon, could: past_available.toFixed(2), need: current_necessary.toFixed(2) }
+        console.log(object)
+        return object
+    }
+    return {}
+}
+
+function calculatePrice(index, usd, date, value, icon = <Gremlin />) {
+    const past_obj = usd.find((record) => (record.d == date))
+
+    if (past_obj) {
+        const past_dollar_price = past_obj.v
+        const past_product_price = PriceJson[new Date(date).getFullYear()][index]
+        const past_available_dollar = parseFloat(value) / past_dollar_price
+        const past_available_product = past_available_dollar / past_product_price
+
+        
+        const current_product_price = PriceJson[new Date().getFullYear()][index]
+        const current_necesary_dollar = past_available_product * current_product_price
+
+        const current_ratio = usd[usd.length - 1].v
+        const current_necesary_pesos = current_necesary_dollar * current_ratio
+        // const current_available_product = past_available_dollar / current_product_price
+
+        const object = { index: index, icon: icon, could: past_available_product.toFixed(2), need: current_necesary_pesos.toFixed(2) }
         console.log(object)
         return object
     }
@@ -72,6 +89,11 @@ class SalaryForm extends React.Component {
             data.push(getD("UVI", uvi, date, value, <Home />))
             data.push(getD("CER", cer, date, value))
             data.push(getD("UVA", uva, date, value))
+            data.push(calculatePrice("Apples (1kg)", usd, date, value))
+            data.push(calculatePrice("McMeal", usd, date, value))
+            data.push(calculatePrice("Gasoline", usd, date, value))
+            data.push(calculatePrice("Rent Apartment (1 bedroom) In City centre", usd, date, value))
+            
 
             this.setState({ data: data })
         }
