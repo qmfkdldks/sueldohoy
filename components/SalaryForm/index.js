@@ -24,22 +24,22 @@ function getD(index, data, date, value, icon = <Currency />) {
 
 function calculatePrice(index, usd, date, value, icon = <Gremlin />) {
     const past_obj = usd.find((record) => (record.d == date))
+    const past_product_price = PriceJson[new Date(date).getFullYear()]
+    const current_product_price = PriceJson[new Date().getFullYear()]
 
-    if (past_obj) {
+    if (past_obj && past_product_price && current_product_price) {
         const past_dollar_price = past_obj.v
-        const past_product_price = PriceJson[new Date(date).getFullYear()][index]
         const past_available_dollar = parseFloat(value) / past_dollar_price
-        const past_available_product = past_available_dollar / past_product_price
+        const past_available_product = past_available_dollar / past_product_price[index]
 
         
-        const current_product_price = PriceJson[new Date().getFullYear()][index]
-        const current_necesary_dollar = past_available_product * current_product_price
+        const current_necesary_dollar = past_available_product * current_product_price[index]
 
         const current_ratio = usd[usd.length - 1].v
         const current_necesary_pesos = current_necesary_dollar * current_ratio
         // const current_available_product = past_available_dollar / current_product_price
 
-        const object = { index: index, icon: icon, could: past_available_product.toFixed(2), need: current_necesary_pesos.toFixed(2) }
+        const object = { index: index, could: past_available_product.toFixed(2), need: current_necesary_pesos.toFixed(2) }
         console.log(object)
         return object
     }
@@ -89,11 +89,10 @@ class SalaryForm extends React.Component {
             data.push(getD("UVI", uvi, date, value, <Home />))
             data.push(getD("CER", cer, date, value))
             data.push(getD("UVA", uva, date, value))
-            data.push(calculatePrice("Apples (1kg)", usd, date, value))
+            data.push(calculatePrice("Manzana (1kg)", usd, date, value))
             data.push(calculatePrice("McMeal", usd, date, value))
-            data.push(calculatePrice("Gasoline", usd, date, value))
-            data.push(calculatePrice("Rent Apartment (1 bedroom) In City centre", usd, date, value))
-            
+            data.push(calculatePrice("Gasolina (1 litro)", usd, date, value))
+            // data.push(calculatePrice("One Way Ticket (Local transport)", usd, date, value))
 
             this.setState({ data: data })
         }

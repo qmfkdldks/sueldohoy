@@ -78,22 +78,21 @@ function calculatePrice(index, usd, date, value) {
   var past_obj = usd.find(function (record) {
     return record.d == date;
   });
+  var past_product_price = _tprice_json__WEBPACK_IMPORTED_MODULE_16__[new Date(date).getFullYear()];
+  var current_product_price = _tprice_json__WEBPACK_IMPORTED_MODULE_16__[new Date().getFullYear()];
 
-  if (past_obj) {
+  if (past_obj && past_product_price && current_product_price) {
     var past_dollar_price = past_obj.v;
-    var past_product_price = _tprice_json__WEBPACK_IMPORTED_MODULE_16__[new Date(date).getFullYear()][index];
     var past_available_dollar = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_9___default()(value) / past_dollar_price;
-    var past_available_product = past_available_dollar / past_product_price;
-    var current_product_price = _tprice_json__WEBPACK_IMPORTED_MODULE_16__[new Date().getFullYear()][index];
-    var current_necesary_dollar = past_available_product * current_product_price;
-    var current_ratio = data[data.length - 1].v;
+    var past_available_product = past_available_dollar / past_product_price[index];
+    var current_necesary_dollar = past_available_product * current_product_price[index];
+    var current_ratio = usd[usd.length - 1].v;
     var current_necesary_pesos = current_necesary_dollar * current_ratio; // const current_available_product = past_available_dollar / current_product_price
 
     var object = {
       index: index,
-      icon: icon,
       could: past_available_product.toFixed(2),
-      need: current_necesary_dollar.toFixed(2)
+      need: current_necesary_pesos.toFixed(2)
     };
     console.log(object);
     return object;
@@ -218,21 +217,18 @@ function (_React$Component) {
           idle: false
         });
 
-        var _data = [];
+        var data = [];
         console.log(usd);
-
-        _data.push(getD("USD", usd, date, value, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet_icons__WEBPACK_IMPORTED_MODULE_12__["Currency"], null)));
-
-        _data.push(getD("UVI", uvi, date, value, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet_icons__WEBPACK_IMPORTED_MODULE_12__["Home"], null)));
-
-        _data.push(getD("CER", cer, date, value));
-
-        _data.push(getD("UVA", uva, date, value));
-
-        _data.push(calculatePrice("Apples (1kg)", usd, date, value));
+        data.push(getD("USD", usd, date, value, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet_icons__WEBPACK_IMPORTED_MODULE_12__["Currency"], null)));
+        data.push(getD("UVI", uvi, date, value, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet_icons__WEBPACK_IMPORTED_MODULE_12__["Home"], null)));
+        data.push(getD("CER", cer, date, value));
+        data.push(getD("UVA", uva, date, value));
+        data.push(calculatePrice("Manzana (1kg)", usd, date, value));
+        data.push(calculatePrice("McMeal", usd, date, value));
+        data.push(calculatePrice("Gasolina (1 litro)", usd, date, value)); // data.push(calculatePrice("One Way Ticket (Local transport)", usd, date, value))
 
         _this.setState({
-          data: _data
+          data: data
         });
       }
     });
@@ -323,4 +319,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.eb6fa42d42d61d5e914c.hot-update.js.map
+//# sourceMappingURL=index.js.654bef00d781affe9dce.hot-update.js.map
