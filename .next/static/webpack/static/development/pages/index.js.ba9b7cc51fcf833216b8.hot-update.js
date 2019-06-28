@@ -218,7 +218,7 @@ function (_React$Component) {
         });
 
         var data = [];
-        console.log(usd);
+        data.push(getD("USD", usd, date, value, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet_icons__WEBPACK_IMPORTED_MODULE_12__["Currency"], null)));
         data.push(getD("USD", usd, date, value, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet_icons__WEBPACK_IMPORTED_MODULE_12__["Currency"], null)));
         data.push(getD("UVI", uvi, date, value, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet_icons__WEBPACK_IMPORTED_MODULE_12__["Home"], null)));
         data.push(getD("CER", cer, date, value));
@@ -319,4 +319,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.654bef00d781affe9dce.hot-update.js.map
+//# sourceMappingURL=index.js.ba9b7cc51fcf833216b8.hot-update.js.map

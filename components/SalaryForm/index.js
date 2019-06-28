@@ -15,7 +15,7 @@ function getD(index, data, date, value, icon = <Currency />) {
 
         const current_ratio = data[data.length - 1].v
         const current_necessary = (past_available * current_ratio)
-        const object = { index: index, icon: icon, could: past_available.toFixed(2), need: current_necessary.toFixed(2) }
+        const object = { index: index, icon: icon, could: past_available.toFixed(2), need: "$ " + current_necessary.toFixed(2) }
         console.log(object)
         return object
     }
@@ -39,7 +39,7 @@ function calculatePrice(index, usd, date, value, icon = <Gremlin />) {
         const current_necesary_pesos = current_necesary_dollar * current_ratio
         // const current_available_product = past_available_dollar / current_product_price
 
-        const object = { index: index, could: past_available_product.toFixed(2), need: current_necesary_pesos.toFixed(2) }
+        const object = { index: index, could: past_available_product.toFixed(0), need: "$ " + current_necesary_pesos.toFixed(2) }
         console.log(object)
         return object
     }
@@ -84,7 +84,7 @@ class SalaryForm extends React.Component {
             this.setState({ idle: false })
 
             const data = []
-            console.log(usd)
+            data.push({ index: "", could: "Podías comprar", need: "Hoy Necsitas" })
             data.push(getD("USD", usd, date, value, <Currency />))
             data.push(getD("UVI", uvi, date, value, <Home />))
             data.push(getD("CER", cer, date, value))

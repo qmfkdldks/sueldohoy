@@ -312,7 +312,7 @@ function getD(index, data, date, value) {
       index: index,
       icon: icon,
       could: past_available.toFixed(2),
-      need: current_necessary.toFixed(2)
+      need: "$ " + current_necessary.toFixed(2)
     };
     console.log(object);
     return object;
@@ -339,8 +339,8 @@ function calculatePrice(index, usd, date, value) {
 
     var object = {
       index: index,
-      could: past_available_product.toFixed(2),
-      need: current_necesary_pesos.toFixed(2)
+      could: past_available_product.toFixed(0),
+      need: "$ " + current_necesary_pesos.toFixed(2)
     };
     console.log(object);
     return object;
@@ -466,7 +466,11 @@ function (_React$Component) {
         });
 
         var data = [];
-        console.log(usd);
+        data.push({
+          index: "",
+          could: "Podías comprar",
+          need: "Hoy Necsitas"
+        });
         data.push(getD("USD", usd, date, value, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet_icons__WEBPACK_IMPORTED_MODULE_12__["Currency"], null)));
         data.push(getD("UVI", uvi, date, value, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(grommet_icons__WEBPACK_IMPORTED_MODULE_12__["Home"], null)));
         data.push(getD("CER", cer, date, value));

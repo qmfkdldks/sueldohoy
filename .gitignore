@@ -2,3 +2,4 @@ node_modules
 inflacion_lambda/\.serverless/
 inflacion_lambda/\.bundle
 inflacion_lambda/\vendor
+.next
